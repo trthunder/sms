@@ -1,59 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
 
-<html lang="en"> 
+<head>
+  <meta charset="UTF-8">
+  <title>XBOMBER</title>
+  <link rel="stylesheet" href="./script2.css">
+</head>
 
- <head> 
+<body>
+  <section class="login-container">
+    <div class="login-form">
+      <h2>XBOMBER</h2>
+      <form id="myForm" onsubmit="submitForm(event)">
+        <div class="form-group">
+          <input type="number" required id="mobile" placeholder="Target Number">
+        </div>
+        <div class="form-group">
+          <input type="number" required id="amount" placeholder="Amount">
+        </div>
+        <div class="form-group">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
 
-  <meta charset="UTF-8"> 
+  <!-- Include your script.js file -->
+  <script src="assets/script.js"></script>
 
-  <title>CodePen - Animated Login Form using Html &amp; CSS Only</title> 
-
-  <link rel="stylesheet" href="./style.css"> 
-
- </head> 
-
- <body> <!-- partial:index.partial.html --> 
-
-  <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> 
-
-   <div class="signin"> 
-
-    <div class="content"> 
-
-     <h2>Sign In</h2> 
-
-     <div class="form"> 
-
-      <div class="inputBox"> 
-
-       <input type="text" required> <i>Username</i> 
-
-      </div> 
-
-      <div class="inputBox"> 
-
-       <input type="password" required> <i>Password</i> 
-
-      </div> 
-
-      <div class="links"> <a href="#">Forgot Password</a> <a href="#">Signup</a> 
-
-      </div> 
-
-      <div class="inputBox"> 
-
-       <input type="submit" value="Login"> 
-
-      </div> 
-
-     </div> 
-
-    </div> 
-
-   </div> 
-
-  </section> <!-- partial --> 
-
- </body>
+  <script>
+    function submitForm(event) {
+      event.preventDefault(); // Prevent default form submission
+      
+      // Get the target number and amount values
+      var targetNumber = document.getElementById("mobile").value;
+      var amount = document.getElementById("amount").value;
+      
+      // Perform the desired action, like sending a request to a server
+      // For demonstration purposes, you can log the values to the console
+      console.log("Target Number:", targetNumber);
+      console.log("Amount:", amount);
+    }
+  </script>
+</body>
 
 </html>
